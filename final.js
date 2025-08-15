@@ -13,16 +13,15 @@ function totalFine( fare ) {
     
 
 /**Problem-02 : Clean & Capitalize Characters */
-function onlyCharacter( str ) {
+function  onlyCharacter( str ) {
           // You have to write your code here
 
-          if (typeof fare !== "number" || fare <= 0) {
+          if ( typeof str !== "string"){
             return "Invalid";
           }
-          let extraCharge = fare * (20 / 100);
-          let serviceCharge = 30;
-          let total = fare + extraCharge + serviceCharge;
-          return total;
+
+          let withoutSpaces = str.replace(/\s+/g, "");
+          return withoutSpaces.toUpperCase();
 }
     
 

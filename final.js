@@ -1,4 +1,5 @@
-/** Problem-01 : Train TT's Fine Calculator */
+// Problem-01 : Train TT's Fine Calculator
+
 function totalFine( fare ) {
           // You have to write your code here
 
@@ -12,7 +13,10 @@ function totalFine( fare ) {
 }
     
 
-/**Problem-02 : Clean & Capitalize Characters */
+
+
+// Problem-02 : Clean & Capitalize Characters
+
 function  onlyCharacter( str ) {
           // You have to write your code here
 
@@ -20,16 +24,21 @@ function  onlyCharacter( str ) {
             return "Invalid";
           }
 
-          let withoutSpaces = str.replace(/\s+/g, "");
+          let withoutSpaces = str.split(" ").join("");
           return withoutSpaces.toUpperCase();
 }
     
 
-/* Problem-03 : FIFA Best Team Award  */
+
+
+// Problem-03 : FIFA Best Team Award
+
 function  bestTeam( player1, player2 ) {
           // You have to write your code here
 
-          if (typeof player1 !== "object" || typeof player2 !== "object" || player1 === null || player2 === null) {
+           if (
+        typeof player1 !== "object" || Array.isArray(player1) ||
+        typeof player2 !== "object" || Array.isArray(player2)) {
         return "Invalid";
     }
 
@@ -40,13 +49,16 @@ function  bestTeam( player1, player2 ) {
         return player1.name;
     } else if (total2 < total1) {
         return player2.name;
-    } else {
+    } 
+    else {
         return "Tie";
     }
 }
 
 
-/* Problem-04 */
+
+
+// Problem-04
 function  isSame(arr1 , arr2 ) {
           // You have to write your code here
 
@@ -68,13 +80,17 @@ function  isSame(arr1 , arr2 ) {
 
 
 
-/* Problem-05: Exam Result Report Generator */
+// Problem-05: Exam Result Report Generator
+
 function  resultReport( marks ) {
           // You have to write your code here
           if (!Array.isArray(marks)) {
         return "Invalid";
     }
 
+    if (marks.length === 0) {
+        return { finalScore: 0, pass: 0, fail: 0 };
+    }
     let total = 0;
     let passCount = 0;
     let failCount = 0;
